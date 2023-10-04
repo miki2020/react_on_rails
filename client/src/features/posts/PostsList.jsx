@@ -48,12 +48,15 @@ function PostsList() {
             console.log(e);
         }
     }
+    
     return (
         <div>
         {posts.map((post) => (
             <div key={post.id} className="post-container">
                 <h2><Link to={`posts/${post.id}`}>{post.title}</Link></h2>
                 <div className="post-links">
+                    <Link to={`/posts/${post.id}/edit`}>Edit</Link>
+                    {" | "}
                     <button onClick={() => deletePost(post.id)}>Delete</button>
                 </div>
             </div>
